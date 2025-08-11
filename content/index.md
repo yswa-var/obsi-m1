@@ -7,10 +7,9 @@ title: Who me??
 **Go, Py, rust × Solana × AI‑Agent Engineer**
 *Building production‑grade infra at the intersection of blockchains & LLMs*
 
-[![Email](https://img.shields.io/badge/email-yswa.var%40icloud.com-informational?style=flat\&logo=gmail)](mailto:yswa.var@icloud.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Yashaswa%20Varshney-blue?logo=linkedin)](https://linkedin.com/in/yashaswa-varshney)
-[![GitHub Followers](https://img.shields.io/github/followers/yswa-var?label=Follow\&style=social)](https://github.com/yswa-var)
-📍 India (IST)  |   *Open to Solana / AI‑infra roles*
+📍 India (IST)  
+
+*Open to Solana / AI‑infra roles*
 
 ---
 
