@@ -1,5 +1,5 @@
 ---
-title: PDA
+title: Programs Derived Addresses
 tags:
   - cryptocurrency
   - solana

@@ -6,7 +6,7 @@ tags:
   - SmartContracts
 ---
 Cross Program Invocation, allows one program to call another program's instructions. Think of it as a function call, but instead of calling a function within the same program, you are calling an "API endpoint" on a different, completely separate program on the blockchain.
-
+ 
 ## Why CPI is Necessary?
 - **Token Transfers**: If your program needs to send a token from one user to another (eg. as a reward or payment), it doesn't need to reimplement all the token logic. Instead, it makes a CPI to the SPL Token Program's `transfer` instruction
 - **DeFi Protocols**: A lending protocol might need to make a CPI to a liquidity pool program to borrow assets or a CPI to a price oracle program to get the current asset value

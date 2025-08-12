@@ -5,14 +5,14 @@ tags: []
 
 # Yashaswa Varshney (YASH) | India (IST)  
 
-**Go, Py, rust × Solana × AI‑Agent Engineer**
-*Building production‑grade infra at the intersection of blockchains & LLMs*
+**Go, Py, rust × Solana × AI Agent Engineer**
+*Building production grade infra at the intersection of blockchains & LLMs*
 
 ==Open to Solana / AI‑infra roles==
 
 ---
 
-##  Tech Toolbox
+##  Tech 
 
 `Rust` · `Python` · `Go` · `TypeScript` · `FastAPI` · `Tokio` · `LangGraph` · `LLM Orchestration` · `Solana SDK` · `PostgreSQL / MongoDB` · `Docker / GitHub Actions`
 
