@@ -1,3 +1,151 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Space-themed background with grain texture
+body {
+  position: relative;
+  overflow-x: hidden;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+    
+    // Light mode space background - dawn/dusk galaxy colors
+    background: 
+      radial-gradient(ellipse at 20% 20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(255, 154, 158, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 70%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(255, 206, 84, 0.15) 0%, transparent 50%),
+      linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(240, 248, 255, 0.9) 25%,
+        rgba(248, 250, 252, 0.9) 50%,
+        rgba(241, 245, 249, 0.9) 75%,
+        rgba(248, 250, 252, 0.95) 100%
+      );
+  }
+  
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    
+    // Grain texture overlay
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    animation: grain 8s steps(10) infinite;
+  }
+}
+
+// Dark mode space background
+:root[saved-theme="dark"] body {
+  &::before {
+    // Dark mode space background - deep space with nebula colors
+    background: 
+      radial-gradient(ellipse at 20% 20%, rgba(76, 29, 149, 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 70%, rgba(59, 130, 246, 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 10%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+      linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(15, 23, 42, 0.9) 25%,
+        rgba(30, 41, 59, 0.85) 50%,
+        rgba(15, 23, 42, 0.9) 75%,
+        rgba(0, 0, 0, 0.95) 100%
+      );
+  }
+  
+  &::after {
+    // Darker grain for dark mode
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 15px 15px;
+    opacity: 0.4;
+  }
+}
+
+// Subtle animation for the grain texture
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-5%, -10%) rotate(1deg); }
+  20% { transform: translate(-15%, 5%) rotate(-1deg); }
+  30% { transform: translate(5%, -25%) rotate(0deg); }
+  40% { transform: translate(-5%, 25%) rotate(1deg); }
+  50% { transform: translate(-15%, 10%) rotate(-1deg); }
+  60% { transform: translate(15%, 0%) rotate(0deg); }
+  70% { transform: translate(0%, 15%) rotate(1deg); }
+  80% { transform: translate(3%, -10%) rotate(-1deg); }
+  90% { transform: translate(-10%, 5%) rotate(0deg); }
+}
+
+// Ensure content remains readable with proper contrast
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+// Add subtle backdrop blur to content areas for better readability
+.sidebar, .center, footer {
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+}
+
+// Enhanced stars effect for both modes
+body::before {
+  box-shadow: 
+    // Small stars
+    20px 30px 0 0px rgba(255, 255, 255, 0.3),
+    80px 120px 0 0px rgba(255, 255, 255, 0.2),
+    150px 80px 0 0px rgba(255, 255, 255, 0.4),
+    220px 200px 0 0px rgba(255, 255, 255, 0.1),
+    300px 50px 0 0px rgba(255, 255, 255, 0.3),
+    380px 180px 0 0px rgba(255, 255, 255, 0.2),
+    450px 100px 0 0px rgba(255, 255, 255, 0.4),
+    520px 220px 0 0px rgba(255, 255, 255, 0.1),
+    600px 70px 0 0px rgba(255, 255, 255, 0.3),
+    680px 160px 0 0px rgba(255, 255, 255, 0.2),
+    // Medium stars
+    750px 90px 0 1px rgba(255, 255, 255, 0.5),
+    820px 190px 0 1px rgba(255, 255, 255, 0.3),
+    900px 40px 0 1px rgba(255, 255, 255, 0.4),
+    980px 140px 0 1px rgba(255, 255, 255, 0.2),
+    // Large stars
+    1050px 110px 0 2px rgba(255, 255, 255, 0.6),
+    1120px 210px 0 2px rgba(255, 255, 255, 0.4);
+}
+
+:root[saved-theme="dark"] body::before {
+  box-shadow: 
+    // Small stars - brighter in dark mode
+    20px 30px 0 0px rgba(255, 255, 255, 0.7),
+    80px 120px 0 0px rgba(255, 255, 255, 0.5),
+    150px 80px 0 0px rgba(255, 255, 255, 0.8),
+    220px 200px 0 0px rgba(255, 255, 255, 0.4),
+    300px 50px 0 0px rgba(255, 255, 255, 0.6),
+    380px 180px 0 0px rgba(255, 255, 255, 0.5),
+    450px 100px 0 0px rgba(255, 255, 255, 0.7),
+    520px 220px 0 0px rgba(255, 255, 255, 0.3),
+    600px 70px 0 0px rgba(255, 255, 255, 0.6),
+    680px 160px 0 0px rgba(255, 255, 255, 0.5),
+    // Medium stars
+    750px 90px 0 1px rgba(255, 255, 255, 0.8),
+    820px 190px 0 1px rgba(255, 255, 255, 0.6),
+    900px 40px 0 1px rgba(255, 255, 255, 0.7),
+    980px 140px 0 1px rgba(255, 255, 255, 0.5),
+    // Large stars
+    1050px 110px 0 2px rgba(255, 255, 255, 0.9),
+    1120px 210px 0 2px rgba(255, 255, 255, 0.7);
+}
