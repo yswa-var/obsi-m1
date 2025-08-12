@@ -2,13 +2,13 @@
 title: Who me??
 tags: []
 ---
-![[Going Merry One Piece Sticker by Netflix Brasil.gif]]
+
 # Yashaswa Varshney (YASH) | India (IST)  
 
 **Go, Py, rust × Solana × AI‑Agent Engineer**
 *Building production‑grade infra at the intersection of blockchains & LLMs*
 
-*Open to Solana / AI‑infra roles*
+==Open to Solana / AI‑infra roles==
 
 ---
 
@@ -34,3 +34,9 @@ tags: []
 
 ## Blogs
 - [[nadaraya-whatson_indicator]]
+- [[mean_reversion_nifty50]]
+
+## Notes
+- [[Engineer's Guide to Solana Part 1 The Theory]]
+- [[Engineer's Guide to Solana Part 2 The Raw Fundamentals, State Management (Native Rust)]]
+- [[Engineer's Guide to Solana Part 3 Mastering Anchor (The Framework)]]
