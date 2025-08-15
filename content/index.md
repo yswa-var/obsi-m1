@@ -14,6 +14,8 @@ some of my fav projects:
 - [Vectoria](https://github.com/yswa-var/Vectoria) personal RAG knowledge base in your CLI, Lightning fast, with features like (remember, index, forget, list, search, vector-search)
 - [SolMPC-node](https://github.com/yswa-var/SolMPC-Node) secure MPC validator network for solana transactions.
 
+<ProjectsButton variant="primary" size="lg" centered={true} />
+
 p.s. langGraph, Anchor haunts me.
 
 i'm open to work. yswa.var@gmail.com
