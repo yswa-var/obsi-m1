@@ -5,29 +5,19 @@ tags: []
 
 # Yashaswa Varshney (YASH) | India (IST)  
 
-**Go, Py, rust × Solana × AI Agent Engineer**
-*Building production grade infra at the intersection of blockchains & LLMs*
+I make projects!
+some experimental... some useful.
 
-==Open to Solana / AI‑infra roles==
+some of my fav projects:
+- [OpenHedgeFund](https://github.com/starkfleet/openhedgefund) langGraph based trading strategy coding engine + back-tester. 
+- [LocoForge](https://github.com/yswa-var/LocoForge) langGraph based prompt to chat with db (sql and nosql)
+- [Vectoria](https://github.com/yswa-var/Vectoria) personal RAG knowledge base in your CLI, Lightning fast, with features like (remember, index, forget, list, search, vector-search)
 
----
+p.s. langGraph, Anchor haunts me.
 
-##  Tech 
-
-`Rust` · `Python` · `Go` · `TypeScript` · `FastAPI` · `Tokio` · `LangGraph` · `LLM Orchestration` · `Solana SDK` · `PostgreSQL / MongoDB` · `Docker / GitHub Actions`
-
-
----
-##  Most Active Projects
-[![LocoForge](https://github-readme-stats.vercel.app/api/pin/?username=yswa-var&repo=locoforge&theme=tokyonight)](https://github.com/yswa-var/locoforge)
-[![Tilt-Validator](https://github-readme-stats.vercel.app/api/pin/?username=yswa-var&repo=SolMPC-Node&theme=tokyonight)](https://github.com/yswa-var/tilt-validator)
-
----
-## How to Reach Me
-
-* **DM** on Twitter/X [@yswa\_var](https://twitter.com/yswa_var)
-* **Email** directly → `yswa.var@icloud.com`
-* **Open an issue** on any repo if you have bugs, ideas, or collaboration offers
+i'm open to work. yswa.var@gmail.com
+X.com https://twitter.com/yswa_var
+Github: https://github.com/yswa-var
 
 ---
 # Index
