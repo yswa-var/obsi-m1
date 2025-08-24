@@ -280,6 +280,11 @@ export default ((userOpts?: Partial<ProjectsButtonOptions>) => {
         color: var(--accent);
       }
     }
+
+    /* Ensure dark mode looks great by default */
+    :root {
+      color-scheme: dark;
+    }
   `
 
   return ProjectsButton

@@ -2,9 +2,12 @@
 title: Projects
 ---
 
-| id | name | github_link | description | tags | stars |
-|----|------|-------------|-------------|------|-------|
-| 1 | Quartz Website | https://github.com/jackyzha0/quartz | Fast, batteries-included static-site generator | Static Site,Markdown,React | 5.2k |
-| 2 | Solana Development | https://github.com/solana-labs/solana | Web-Scale Blockchain for Decentralized Apps | Blockchain,Rust,Web3 | 10.5k |
-| 3 | Anchor Framework | https://github.com/coral-xyz/anchor | Framework for Solana's Sealevel runtime | Solana,Rust,Framework | 3.8k |
-| 4 | React Projects | https://github.com/facebook/react | JavaScript library for building user interfaces | JavaScript,UI,Frontend | 208k |
+| Name                | github_link                                     | description                                                                                                                                    |
+| ------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| SolMPC-Node         | https://github.com/yswa-var/SolMPC-Node         | Secure MPC Validator Network for Solana                                                                                                        |
+| EasyBt              | https://github.com/yswa-var/EasyBt              | Python Library that helps the user to backtest any strategy or combinations of strategies and generate buy sell signals like making a lemonade |
+| chartink-backtestor | https://github.com/yswa-var/chartink-backtestor | data analysis on historical chartink                                                                                                           |
+| async-chat-server   | https://github.com/yswa-var/async-chat-server   | real-time chat server built with Rust and Tokio that enables multiple clients to communicate simultaneously through TCP connections            |
+| LocoForge           | https://github.com/yswa-var/LocoForge           | prompt to SQL, NoSQL and GoogleDrive task executing agent                                                                                      |
+| Vectoria            | https://github.com/yswa-var/Vectoria            | Connect queries to knowledge at lightning speed                                                                                                |
+|                     |                                                 |                                                                                                                                                |

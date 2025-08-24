@@ -200,23 +200,7 @@ export default ((userOpts?: Partial<Options>) => {
                   )}
                 </div>
                 <div class="project-actions">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="external-link-icon"
-                  >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15,3 21,3 21,9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
-                  </svg>
-                  <span class="view-text">View</span>
+                  <span class="github-button">Github</span>
                 </div>
               </a>
             </div>
@@ -246,12 +230,12 @@ export default ((userOpts?: Partial<Options>) => {
 
   Projects.css = `
     .projects {
-      margin-top: 1.5rem;
-      padding: 1.25rem;
-      border-radius: 0.75rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
       background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
-      border: 2px solid var(--border);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
       animation: slideInUp 0.6s ease-out;
@@ -280,21 +264,19 @@ export default ((userOpts?: Partial<Options>) => {
     }
 
     .projects h3 {
-      margin: 0 0 1.25rem 0;
-      font-size: 1.25rem;
-      font-weight: 700;
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--text-normal);
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      gap: 0.5rem;
     }
 
     .projects h3::before {
       content: "🚀";
-      font-size: 1.25rem;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      font-size: 1rem;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
       animation: rocketPulse 2s ease-in-out infinite;
     }
 
@@ -308,10 +290,10 @@ export default ((userOpts?: Partial<Options>) => {
     }
 
     .projects-controls {
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.75rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.75rem;
     }
 
     .search-container {
@@ -321,12 +303,12 @@ export default ((userOpts?: Partial<Options>) => {
 
     .search-input {
       width: 100%;
-      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      padding: 0.5rem 0.75rem 0.5rem 2rem;
       border: 1px solid var(--border);
-      border-radius: 0.5rem;
+      border-radius: 0.375rem;
       background: var(--background);
       color: var(--text-normal);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: all 0.2s ease;
       outline: none;
     }
@@ -343,7 +325,7 @@ export default ((userOpts?: Partial<Options>) => {
 
     .search-icon {
       position: absolute;
-      left: 0.75rem;
+      left: 0.5rem;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
@@ -357,12 +339,12 @@ export default ((userOpts?: Partial<Options>) => {
     }
 
     .tag-filter {
-      padding: 0.5rem 0.75rem;
+      padding: 0.375rem 0.5rem;
       border: 1px solid var(--border);
-      border-radius: 0.375rem;
+      border-radius: 0.25rem;
       background: var(--background);
       color: var(--text-normal);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -383,11 +365,11 @@ export default ((userOpts?: Partial<Options>) => {
     .projects-list {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
 
     .project-item {
-      border-radius: 0.5rem;
+      border-radius: 0.375rem;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: 1px solid var(--border);
       background: var(--background);
@@ -422,10 +404,10 @@ export default ((userOpts?: Partial<Options>) => {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem;
+      padding: 0.75rem;
       text-decoration: none;
       color: var(--text-normal);
-      border-radius: 0.5rem;
+      border-radius: 0.375rem;
       transition: all 0.3s ease;
       position: relative;
       z-index: 1;
@@ -452,9 +434,9 @@ export default ((userOpts?: Partial<Options>) => {
 
     .project-name {
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--text-normal);
-      line-height: 1.4;
+      line-height: 1.3;
       flex: 1;
     }
 
@@ -469,9 +451,9 @@ export default ((userOpts?: Partial<Options>) => {
     }
 
     .project-description {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.3;
       opacity: 0.9;
       font-style: italic;
     }
@@ -479,16 +461,16 @@ export default ((userOpts?: Partial<Options>) => {
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.25rem;
-      margin-top: 0.25rem;
+      gap: 0.2rem;
+      margin-top: 0.2rem;
     }
 
     .project-tag {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-muted);
       background: var(--secondary);
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.25rem;
+      padding: 0.15rem 0.3rem;
+      border-radius: 0.2rem;
       border: 1px solid var(--border);
       font-family: var(--font-mono);
       transition: all 0.2s ease;
@@ -501,62 +483,53 @@ export default ((userOpts?: Partial<Options>) => {
     }
 
     .project-id {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--text-muted);
       opacity: 0.9;
       font-family: var(--font-mono);
       background: var(--secondary);
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.2rem;
       display: inline-block;
       width: fit-content;
-    }
-
-    .external-link-icon {
-      color: var(--accent);
-      opacity: 0.8;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
     }
 
     .project-actions {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.25rem;
       flex-shrink: 0;
     }
 
-    .view-text {
-      font-size: 0.8rem;
-      font-weight: 500;
+    .github-button {
+      font-size: 0.7rem;
+      font-weight: 600;
       color: var(--accent);
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.3s ease;
+      background: rgba(59, 130, 246, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      border: 1px solid var(--accent);
+      transition: all 0.2s ease;
       white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
     }
 
-    .project-link:hover .view-text {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .project-link:hover .external-link-icon {
-      opacity: 1;
-      transform: translateX(3px) scale(1.1);
-      color: var(--accent);
+    .project-link:hover .github-button {
+      background: var(--accent);
+      color: white;
+      transform: scale(1.05);
     }
 
     .projects-footer {
-      margin-top: 1rem;
-      padding-top: 1rem;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
       border-top: 1px solid var(--border);
       text-align: center;
     }
 
     .projects-count {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: var(--text-muted);
       opacity: 0.8;
       font-style: italic;
@@ -605,10 +578,11 @@ export default ((userOpts?: Partial<Options>) => {
       .project-name {
         font-size: 0.95rem;
       }
+    }
 
-      .view-text {
-        display: none;
-      }
+    /* Ensure dark mode looks great by default */
+    :root {
+      color-scheme: dark;
     }
   `
 

@@ -34,7 +34,7 @@ Now i'm learning web3 infra development mainly using typescript-rust-anchor-sola
 
 I'm all in on theNetworkState dream.
 
-I'm actively looking for opportunities, let's have a chat yswa.var@gmail.com
+I'm actively looking for opportunities, let's have a chat yswa.var@icloud.com
 
 ---
 # Index
