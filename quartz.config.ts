@@ -23,32 +23,40 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Inter",
-        body: "Inter",
+        header: {
+          name: "Funnel Sans",
+          weights: [400, 600, 700],
+          includeItalic: true
+        },
+        body: {
+          name: "Funnel Sans",
+          weights: [300, 400, 500, 600],
+          includeItalic: true
+        },
         code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
-          light: "#ffffff",
-          lightgray: "#f5f5f5",
-          gray: "#9ca3af",
-          darkgray: "#374151",
-          dark: "#111827",
-          secondary: "#0ea5e9",
-          tertiary: "#64748b",
-          highlight: "rgba(14, 165, 233, 0.1)",
-          textHighlight: "#0ea5e944",
+          light: "#eff1f5", // Catppuccin Latte Base
+          lightgray: "#ccd0da", // Catppuccin Latte Surface 0
+          gray: "#9ca0b0", // Catppuccin Latte Overlay 0
+          darkgray: "#4c4f69", // Catppuccin Latte Text
+          dark: "#1e1e2e", // Catppuccin Mocha Base
+          secondary: "#89b4fa", // Catppuccin Mocha Blue
+          tertiary: "#6c7086", // Catppuccin Mocha Overlay 0
+          highlight: "rgba(137, 180, 250, 0.1)", // Catppuccin Mocha Blue with transparency
+          textHighlight: "#89b4fa44", // Catppuccin Mocha Blue with transparency
         },
         darkMode: {
-          light: "#000000",
-          lightgray: "#1f2937",
-          gray: "#6b7280",
-          darkgray: "#d1d5db",
-          dark: "#f9fafb",
-          secondary: "#0ea5e9",
-          tertiary: "#64748b",
-          highlight: "rgba(14, 165, 233, 0.15)",
-          textHighlight: "#0ea5e955",
+          light: "#1e1e2e", // Catppuccin Mocha Base
+          lightgray: "#313244", // Catppuccin Mocha Surface 0
+          gray: "#6c7086", // Catppuccin Mocha Overlay 0
+          darkgray: "#cdd6f4", // Catppuccin Mocha Text
+          dark: "#f9fafb", // Light text for dark backgrounds
+          secondary: "#89b4fa", // Catppuccin Mocha Blue
+          tertiary: "#6c7086", // Catppuccin Mocha Overlay 0
+          highlight: "rgba(137, 180, 250, 0.15)", // Catppuccin Mocha Blue with transparency
+          textHighlight: "#89b4fa55", // Catppuccin Mocha Blue with transparency
         },
       },
     },

@@ -1,23 +1,65 @@
 @use "./base.scss";
 
-// Simple solid background without gradients
+// Catppuccin Mocha Theme - Solid Backgrounds
+:root {
+  color-scheme: dark;
+}
+
+// Funnel Sans Font Styling
+body {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography improvements with Funnel Sans
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Funnel Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+// Override any potential gradient backgrounds with solid colors
 body {
   position: relative;
   overflow-x: hidden;
+  background: #1e1e2e !important; // Catppuccin Mocha Base - solid background
+  background-image: none !important; // Remove any background images
+  background-attachment: fixed !important; // Ensure background stays fixed
 }
 
-// Light mode - simple white background
+// Light mode - Catppuccin Latte theme
 :root[saved-theme="light"] body {
-  background-color: #ffffff;
+  background: #eff1f5 !important; // Catppuccin Latte Base - solid background
+  background-image: none !important; // Remove any background images
+  background-attachment: fixed !important; // Ensure background stays fixed
 }
 
-// Dark mode - simple dark background (default)
-body {
-  background-color: #0f172a;
-}
-
+// Dark mode - Catppuccin Mocha theme (default)
 :root[saved-theme="dark"] body {
-  background-color: #0f172a;
+  background: #1e1e2e !important; // Catppuccin Mocha Base - solid background
+  background-image: none !important; // Remove any background images
+  background-attachment: fixed !important; // Ensure background stays fixed
 }
 
 // Ensure content remains readable
@@ -33,31 +75,89 @@ body {
 
 // Ensure proper contrast in dark mode
 .page {
-  color: #e5e7eb;
+  color: #cdd6f4; // Catppuccin Mocha Text
 }
 
 // Improve readability for headings in dark mode
 h1, h2, h3, h4, h5, h6 {
-  color: #f9fafb;
+  color: #f9fafb; // Light text for headings
 }
 
 // Better link colors for dark mode
 a {
-  color: #60a5fa;
+  color: #89b4fa; // Catppuccin Mocha Blue
+  font-weight: 500;
 }
 
 a:hover {
-  color: #93c5fd;
+  color: #b4befe; // Catppuccin Mocha Lavender
 }
 
 // Improve code block readability in dark mode
 code {
-  background-color: #1f2937;
-  color: #e5e7eb;
+  background-color: #313244; // Catppuccin Mocha Surface 0
+  color: #cdd6f4; // Catppuccin Mocha Text
+  font-family: "JetBrains Mono", monospace;
 }
 
 pre {
-  background-color: #1f2937;
-  border: 1px solid #374151;
+  background-color: #313244; // Catppuccin Mocha Surface 0
+  border: 1px solid #45475a; // Catppuccin Mocha Surface 1
+  font-family: "JetBrains Mono", monospace;
+}
+
+// Additional Catppuccin color overrides for better consistency
+:root[saved-theme="light"] {
+  .page {
+    color: #4c4f69; // Catppuccin Latte Text
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #1e1e2e; // Catppuccin Latte Base
+  }
+  
+  a {
+    color: #1e66f5; // Catppuccin Latte Blue
+  }
+  
+  a:hover {
+    color: #7287fd; // Catppuccin Latte Lavender
+  }
+  
+  code {
+    background-color: #ccd0da; // Catppuccin Latte Surface 0
+    color: #4c4f69; // Catppuccin Latte Text
+  }
+  
+  pre {
+    background-color: #ccd0da; // Catppuccin Latte Surface 0
+    border: 1px solid #acb0be; // Catppuccin Latte Surface 2
+  }
+}
+
+// Enhanced typography for better readability
+p, li, div {
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+em, i {
+  font-style: italic;
+  font-weight: 400;
+}
+
+// Navigation and UI elements
+nav, .nav, .navigation {
+  font-weight: 500;
+}
+
+// Search and input elements
+input, textarea, select {
+  font-family: "Funnel Sans", sans-serif;
+  font-weight: 400;
 }
 
