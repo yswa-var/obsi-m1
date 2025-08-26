@@ -11,6 +11,8 @@ tags:
   - technical-analysis
 ---
 
+← [[index]] | See also: [[Trading Blogs/mean_reversion_nifty50]]
+
 # Backtesting the Viral Nadaraya-Watson Envelope Trading Indicator in Python
 
 *Too good to be true is often a warning sign, and this is certainly the case with the Nadaraya-Watson indicator. Let me explain...*

@@ -1,9 +1,17 @@
 ---
 title: next.js notes
 tags:
-  - rust
+  - javascript
+  - react
+  - nextjs
+  - web-development
 ---
-# Commands
+
+← [[index]]
+
+# Next.js Notes
+
+## Commands
 - Create new next.js project `npx create-next-app@canary < app name >`
 - Run `npm run dev`
 - **`app/`**: The main directory for your application code using the App Router

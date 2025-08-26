@@ -2,7 +2,11 @@
 title: structs
 ---
 
-this bit tis easy!
+← [[rust/001]] | [[rust/Ownership]] →
+
+# Structs in Rust
+
+This bit is easy!
 
 defineing strut 
 ```

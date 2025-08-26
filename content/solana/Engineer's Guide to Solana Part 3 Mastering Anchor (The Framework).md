@@ -12,7 +12,9 @@ tags:
   - development
 ---
 
-[[PDA]] · [[CPI]]
+← [[solana/Engineer's Guide to Solana Part 2 The Raw Fundamentals, State Management (Native Rust)]]
+
+Related concepts: [[solana/PDA]] · [[solana/CPI]]
 
 ### Why Anchor?
 Anchor makes writing Solana programs safer and more ergonomic. It provides:

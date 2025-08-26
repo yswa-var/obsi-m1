@@ -5,6 +5,10 @@ tags:
   - solana
   - SmartContracts
 ---
+
+Related: [[solana/PDA]] | [[solana/Engineer's Guide to Solana Part 1 The Theory]]
+
+# Cross Program Invocation
 Cross Program Invocation, allows one program to call another program's instructions. Think of it as a function call, but instead of calling a function within the same program, you are calling an "API endpoint" on a different, completely separate program on the blockchain.
  
 ## Why CPI is Necessary?

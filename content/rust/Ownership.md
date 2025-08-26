@@ -2,7 +2,11 @@
 title: Ownership
 ---
 
-lets first talk about stack and heap
+← [[rust/001]] | [[rust/structs]] →
+
+# Ownership in Rust
+
+Let's first talk about stack and heap
 
 ## stack
 - first in last out 

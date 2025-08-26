@@ -40,10 +40,25 @@ I'm actively looking for opportunities, let's have a chat yswa.var@icloud.com
 # Index
 
 ## Blogs
-- [[nadaraya-whatson_indicator]]
-- [[mean_reversion_nifty50]]
+- [[Trading Blogs/nadaraya-whatson_indicator]]
+- [[Trading Blogs/mean_reversion_nifty50]]
 
 ## Notes
-- [[Engineer's Guide to Solana Part 1 The Theory]]
-- [[Engineer's Guide to Solana Part 2 The Raw Fundamentals, State Management (Native Rust)]]
-- [[Engineer's Guide to Solana Part 3 Mastering Anchor (The Framework)]]
+
+### Solana
+- [[solana/Engineer's Guide to Solana Part 1 The Theory]]
+- [[solana/Engineer's Guide to Solana Part 2 The Raw Fundamentals, State Management (Native Rust)]]
+- [[solana/Engineer's Guide to Solana Part 3 Mastering Anchor (The Framework)]]
+- [[solana/PDA]]
+- [[solana/CPI]]
+
+### Rust
+- [[rust/001]]
+- [[rust/Ownership]]
+- [[rust/structs]]
+- [[rust/axum]]
+
+### Other Topics
+- [[book_DDIA/001]]
+- [[Next js notes]]
+- [[$$ 1]]

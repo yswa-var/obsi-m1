@@ -12,6 +12,8 @@ tags:
   - development
 ---
 
+← [[solana/Engineer's Guide to Solana Part 1 The Theory]] | [[solana/Engineer's Guide to Solana Part 3 Mastering Anchor (The Framework)]] →
+
 # Engineer's Guide to Solana: Part 2 - The Raw Fundamentals, State Management (Native Rust)
 
 In Part 1 of the series, we covered the fundamentals of Solana. In this part, we will understand how to code a smart contract in native Rust. Sure, there is an easier approach with "Anchor" to code smart contracts, but this framework hides a lot of boilerplate code which I think is very important to understand the approach of Solana towards its development. Also, knowing this makes Anchor actually helpful.

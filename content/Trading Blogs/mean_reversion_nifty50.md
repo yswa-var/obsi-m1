@@ -13,6 +13,8 @@ tags:
   - nifty50
 ---
 
+← [[index]] | See also: [[Trading Blogs/nadaraya-whatson_indicator]]
+
 # Testing Mean Reversion Trading Strategy on Nifty50 Stocks
 
 ## What is Mean Reversion?

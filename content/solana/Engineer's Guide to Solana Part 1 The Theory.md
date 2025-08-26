@@ -323,9 +323,11 @@ PDA-owned authority makes minting:
 
 ## What's Next?
 
-- **Part 2**: The Raw Fundamentals, State Management (Native Rust) [[Engineer's Guide to Solana Part 2 The Raw Fundamentals, State Management (Native Rust)]]
-- **Part 3**: Mastering Anchor (The Framework) [[Engineer's Guide to Solana Part 3 Mastering Anchor (The Framework)]]
+- **Part 2**: The Raw Fundamentals, State Management (Native Rust) → [[solana/Engineer's Guide to Solana Part 2 The Raw Fundamentals, State Management (Native Rust)]]
+- **Part 3**: Mastering Anchor (The Framework) → [[solana/Engineer's Guide to Solana Part 3 Mastering Anchor (The Framework)]]
 - **Part 4**: Anchor Smart Contract General Patterns
+
+Related concepts: [[solana/PDA]] · [[solana/CPI]]
 
 ---
 

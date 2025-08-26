@@ -7,6 +7,7 @@ tags:
 date: 2025-08-12
 ---
 
+Related: [[solana/CPI]] | [[solana/Engineer's Guide to Solana Part 1 The Theory]]
 
 # Introduction to PDAs
 Programs Derived Addresses provide developers on solana with two main use cases:
