@@ -105,4 +105,4 @@ fn main() {
 ```
 
 
-
+(advance shit)[https://www.youtube.com/watch?v=VFIOSWy93H0&t=181s]
