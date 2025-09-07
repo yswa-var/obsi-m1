@@ -1,12 +1,8 @@
 ---
 title: enum
 ---
+← [[rust/001]]
 
-Of course\! Here are comprehensive notes on Rust `enum`s, formatted in Markdown with code snippets for clarity.
-
------
-
-# Full Notes on Rust Enums
 
 Enums, short for enumerations, are a powerful feature in Rust. Unlike enums in many other languages which are often just a set of named integer constants, Rust enums are rich algebraic data types. They allow you to define a type that can be one of several possible variants.
 
