@@ -7,7 +7,6 @@ tags: []
 tl;dr
 
 All my adult life i’ve build projects. this past 2 years mainly focusing agentic and web3 tools, using Python, Rust, Typescript, langgraph and solana ecosystem. I don’t have much hobbies other then building stuff, sticking to my screen and getting my dopamine from “build:success”. 
-with a little bit of autism, i’ve kept my head down and build stuff. 
 
 ### Journey
 
