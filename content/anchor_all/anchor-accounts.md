@@ -130,3 +130,92 @@ pub fn update(ctx: Context<Upate>, delta: u64) -> Result<()> {
 }
 ```
 `has_one = owner` tells anchor my_account.owner == owner.key()
+
+
+# Lazy accounts
+https://arc.net/l/quote/ludjcqhm
+
+# Token Accounts
+assests like USDC, NFTs, goverancce token is managed by the SPL Toke program.
+
+SPL tokens have two major account types
+- mint token: define the token, it's supply, decimals, auths
+- token Account (ata) holds a balance of that token for a specefic wallet
+
+## Mint account in anchor_lang
+```rust
+#[account(
+    mint::decimals     = 6,                   // how many decimals
+    mint::authority    = signer,              // who can mint more
+    mint::freeze_authority = signer,          // who can freeze accounts (optional)
+    mint::token_program = token_program       // which token program (SPL or Token2022)
+)]
+pub mint: Account<'info, Mint>,
+
+```
+
+this represent USDC like token itself
+decimals = 6 -> USDC = 1_000000 base units
+authority = signer -> only signer can mint more supply
+freeze_authority  (optional) can freeze accounts if needed
+anchor enforces these constraints automatically 
+
+## Token Accout ATA in anchor 
+```rust
+#[account(
+    mut,
+    associated_token::mint       = mint,      // must belong to our Mint
+    associated_token::authority  = signer,    // owned by signer
+    associated_token::token_program = token_program
+)]
+pub maker_ata_a: Account<'info, TokenAccount>,
+
+```
+
+if mint = USDC 
+signer = alice maker_ata_a = alice's usdc account 
+anyone can send tokens in but only alice authority can spend tem 
+mut as balance is changged during transfer/
+
+## Token vs Token2022
+
+Solana is migrating to Token2022, which supports extensions (like interest-bearing tokens, confidential transfers).
+
+Problem:
+- Account<'info, Mint> only works with classic SPL Token.
+- Account<'info, TokenAccount> only works with classic Token accounts.
+
+Solution = InterfaceAccount
+
+[BLOCK]
+
+https://learn.blueshift.gg/en/courses/spl-token-with-anchor
+https://learn.blueshift.gg/en/courses/token-2022-with-anchor
+
+
+## addons 
+ - `UncheckedAccount` provides access to the account without checking 
+ - Working with accounts that lack a defined structure
+ - Implementing custom validation logic
+ - Interacting with accounts from other programs that don't have Anchor type definitions
+
+ ... https://learn.blueshift.gg/courses/anchor-for-dummies/anchor-accounts#custom-account-validation
+
+Client Side Implementation
+We can easily pass remaining accounts using the Anchor SDK generated once we do anchor build. Since those are "raw" accounts we'll need to specify if they need to be passed as signer and/or mutable like this:
+
+ts
+await program.methods.someMethod().accounts({
+  // some accounts
+})
+.remainingAccounts([
+  {
+    isSigner: false,
+    isWritable: true,
+    pubkey: new Pubkey().default
+  }
+])
+.rpc();
+
+[[anchor-instructions.md]] ->
+
