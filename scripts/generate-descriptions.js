@@ -141,7 +141,7 @@ function getRecentMarkdownFiles() {
   // Sort by modification time (newest first) and take top 3
   return files
     .sort((a, b) => b.modified - a.modified)
-    .slice(0, 3);
+    .slice(0, 10);
 }
 
 /**
