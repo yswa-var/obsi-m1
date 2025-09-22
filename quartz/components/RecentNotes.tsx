@@ -42,6 +42,7 @@ export default ((userOpts?: Partial<Options>) => {
           {pages.slice(0, opts.limit).map((page) => {
             const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
             const tags = page.frontmatter?.tags ?? []
+            const description = page.frontmatter?.description
 
             return (
               <li class="recent-li">
@@ -52,6 +53,11 @@ export default ((userOpts?: Partial<Options>) => {
                         {title}
                       </a>
                     </h3>
+                    {description && (
+                      <p class="description">
+                        {description}
+                      </p>
+                    )}
                   </div>
                   {page.dates && (
                     <p class="meta">
