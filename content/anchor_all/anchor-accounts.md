@@ -1,7 +1,7 @@
 ---
 topic: anchor accounts
+description: explains the different types of accounts used in Solana programs, including data accounts, transaction signers, and token accounts.
 ---
-
 ## let master program accounts
 
 | Account Type             | Purpose                                  |

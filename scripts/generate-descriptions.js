@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configuration
 const CONTENT_DIR = path.join(__dirname, '../content');
@@ -25,7 +29,7 @@ function checkOllamaRunning() {
  * Generate description using Ollama
  */
 async function generateDescription(content, title) {
-  const prompt = `Please write a concise 1-2 sentence description for this blog post titled "${title}". Focus on the main topic and key takeaways. Keep it under 100 words.
+  const prompt = `Write a single, concise sentence describing this blog post titled "${title}". Focus on the main topic. Be direct and specific. Do not include options or formatting.
 
 Content preview:
 ${content.substring(0, MAX_CONTENT_LENGTH)}${content.length > MAX_CONTENT_LENGTH ? '...' : ''}
@@ -40,7 +44,22 @@ Description:`;
     }'`, { encoding: 'utf8' });
     
     const result = JSON.parse(response);
-    return result.response?.trim() || '';
+    let description = result.response?.trim() || '';
+    
+    // Clean up the description - remove common prefixes and formatting
+    description = description
+      .replace(/^(Here's a|Here is a|This is a|The blog post|This blog post|Description:|Summary:)/i, '')
+      .replace(/^\s*[-*•]\s*/, '') // Remove bullet points
+      .replace(/^["']|["']$/g, '') // Remove quotes
+      .trim();
+    
+    // Take only the first sentence if multiple sentences
+    const sentences = description.split(/[.!?]+/);
+    if (sentences.length > 1 && sentences[0].trim()) {
+      description = sentences[0].trim() + '.';
+    }
+    
+    return description;
   } catch (error) {
     console.error(`Error generating description for ${title}:`, error.message);
     return '';
@@ -177,8 +196,8 @@ async function main() {
 }
 
 // Run the script
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch(console.error);
 }
 
-module.exports = { main };
+export { main };
