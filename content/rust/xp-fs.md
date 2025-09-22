@@ -1,7 +1,7 @@
 ---
 title: fs notes
+description: demonstrates fundamental file system operations in Rust, including writing to, reading from, and creating directories.
 ---
-
 [[001]]
 
 # fs 

@@ -1,8 +1,7 @@
 ---
 title: wallet_essentials
+description: demonstrates how to generate and restore Solana keypairs, including the creation of mnemonic phrases.
 ---
-
-
 ```rust
 // Import required dependencies
 import { Keypair } from "@solana/web3.js";

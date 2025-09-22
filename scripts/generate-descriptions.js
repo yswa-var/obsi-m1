@@ -51,6 +51,8 @@ Description:`;
       .replace(/^(Here's a|Here is a|This is a|The blog post|This blog post|Description:|Summary:)/i, '')
       .replace(/^\s*[-*•]\s*/, '') // Remove bullet points
       .replace(/^["']|["']$/g, '') // Remove quotes
+      .replace(/^,\s*/, '') // Remove leading commas
+      .replace(/^,?\s*"[^"]*",?\s*/, '') // Remove quoted titles at the beginning
       .trim();
     
     // Take only the first sentence if multiple sentences
