@@ -1,5 +1,5 @@
 const userPref = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
-const currentTheme = localStorage.getItem("theme") ?? "dark" // Default to dark mode
+const currentTheme = localStorage.getItem("theme") ?? "light" // Default to light mode
 document.documentElement.setAttribute("saved-theme", currentTheme)
 
 const emitThemeChangeEvent = (theme: "light" | "dark") => {

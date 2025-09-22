@@ -37,26 +37,26 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#eff1f5", // Catppuccin Latte Base
-          lightgray: "#ccd0da", // Catppuccin Latte Surface 0
-          gray: "#9ca0b0", // Catppuccin Latte Overlay 0
-          darkgray: "#4c4f69", // Catppuccin Latte Text
-          dark: "#1e1e2e", // Catppuccin Mocha Base
-          secondary: "#89b4fa", // Catppuccin Mocha Blue
-          tertiary: "#6c7086", // Catppuccin Mocha Overlay 0
-          highlight: "rgba(137, 180, 250, 0.1)", // Catppuccin Mocha Blue with transparency
-          textHighlight: "#89b4fa44", // Catppuccin Mocha Blue with transparency
+          light: "#ffffff", // GitHub Light background
+          lightgray: "#f6f8fa", // GitHub Light secondary background
+          gray: "#656d76", // GitHub Light muted text
+          darkgray: "#24292f", // GitHub Light primary text
+          dark: "#24292f", // GitHub Light dark text
+          secondary: "#0969da", // GitHub Light primary blue
+          tertiary: "#656d76", // GitHub Light tertiary text
+          highlight: "rgba(9, 105, 218, 0.1)", // GitHub Light blue highlight
+          textHighlight: "#fff8c5", // GitHub Light text highlight (yellow)
         },
         darkMode: {
-          light: "#1e1e2e", // Catppuccin Mocha Base
-          lightgray: "#313244", // Catppuccin Mocha Surface 0
-          gray: "#6c7086", // Catppuccin Mocha Overlay 0
-          darkgray: "#cdd6f4", // Catppuccin Mocha Text
-          dark: "#f9fafb", // Light text for dark backgrounds
-          secondary: "#89b4fa", // Catppuccin Mocha Blue
-          tertiary: "#6c7086", // Catppuccin Mocha Overlay 0
-          highlight: "rgba(137, 180, 250, 0.15)", // Catppuccin Mocha Blue with transparency
-          textHighlight: "#89b4fa55", // Catppuccin Mocha Blue with transparency
+          light: "#0d1117", // GitHub Dark background
+          lightgray: "#161b22", // GitHub Dark secondary background
+          gray: "#7d8590", // GitHub Dark muted text
+          darkgray: "#f0f6fc", // GitHub Dark primary text
+          dark: "#f0f6fc", // GitHub Dark light text
+          secondary: "#58a6ff", // GitHub Dark primary blue
+          tertiary: "#7d8590", // GitHub Dark tertiary text
+          highlight: "rgba(88, 166, 255, 0.15)", // GitHub Dark blue highlight
+          textHighlight: "#ffd33d44", // GitHub Dark text highlight
         },
       },
     },

@@ -1,8 +1,8 @@
 @use "./base.scss";
 
-// Catppuccin Mocha Theme - Solid Backgrounds
+// GitHub Light Theme - Default
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 // Funnel Sans Font Styling
@@ -43,21 +43,21 @@ h3, h4, h5, h6 {
 body {
   position: relative;
   overflow-x: hidden;
-  background: #1e1e2e !important; // Catppuccin Mocha Base - solid background
+  background: #ffffff !important; // GitHub Light background
   background-image: none !important; // Remove any background images
   background-attachment: fixed !important; // Ensure background stays fixed
 }
 
-// Light mode - Catppuccin Latte theme
+// Light mode - GitHub Light theme
 :root[saved-theme="light"] body {
-  background: #eff1f5 !important; // Catppuccin Latte Base - solid background
+  background: #ffffff !important; // GitHub Light background
   background-image: none !important; // Remove any background images
   background-attachment: fixed !important; // Ensure background stays fixed
 }
 
-// Dark mode - Catppuccin Mocha theme (default)
+// Dark mode - GitHub Dark theme
 :root[saved-theme="dark"] body {
-  background: #1e1e2e !important; // Catppuccin Mocha Base - solid background
+  background: #0d1117 !important; // GitHub Dark background
   background-image: none !important; // Remove any background images
   background-attachment: fixed !important; // Ensure background stays fixed
 }
@@ -68,70 +68,99 @@ body {
   z-index: 1;
 }
 
-// Dark theme as default - additional styling
+// Light theme as default - additional styling
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
-// Ensure proper contrast in dark mode
+// Ensure proper contrast in light mode
 .page {
-  color: #cdd6f4; // Catppuccin Mocha Text
+  color: #24292f; // GitHub Light text
 }
 
-// Improve readability for headings in dark mode
+// Improve readability for headings in light mode
 h1, h2, h3, h4, h5, h6 {
-  color: #f9fafb; // Light text for headings
+  color: #24292f; // GitHub Light heading text
 }
 
-// Better link colors for dark mode
+// Better link colors for light mode
 a {
-  color: #89b4fa; // Catppuccin Mocha Blue
+  color: #0969da; // GitHub Light blue
   font-weight: 500;
 }
 
 a:hover {
-  color: #b4befe; // Catppuccin Mocha Lavender
+  color: #0550ae; // GitHub Light blue hover
 }
 
-// Improve code block readability in dark mode
+// Improve code block readability in light mode
 code {
-  background-color: #313244; // Catppuccin Mocha Surface 0
-  color: #cdd6f4; // Catppuccin Mocha Text
+  background-color: #f6f8fa; // GitHub Light code background
+  color: #24292f; // GitHub Light text
   font-family: "JetBrains Mono", monospace;
 }
 
 pre {
-  background-color: #313244; // Catppuccin Mocha Surface 0
-  border: 1px solid #45475a; // Catppuccin Mocha Surface 1
+  background-color: #f6f8fa; // GitHub Light code background
+  border: 1px solid #d1d9e0; // GitHub Light border
   font-family: "JetBrains Mono", monospace;
 }
 
-// Additional Catppuccin color overrides for better consistency
+// Additional GitHub Light color overrides for better consistency
 :root[saved-theme="light"] {
   .page {
-    color: #4c4f69; // Catppuccin Latte Text
+    color: #24292f; // GitHub Light text
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #1e1e2e; // Catppuccin Latte Base
+    color: #24292f; // GitHub Light heading text
   }
   
   a {
-    color: #1e66f5; // Catppuccin Latte Blue
+    color: #0969da; // GitHub Light blue
   }
   
   a:hover {
-    color: #7287fd; // Catppuccin Latte Lavender
+    color: #0550ae; // GitHub Light blue hover
   }
   
   code {
-    background-color: #ccd0da; // Catppuccin Latte Surface 0
-    color: #4c4f69; // Catppuccin Latte Text
+    background-color: #f6f8fa; // GitHub Light code background
+    color: #24292f; // GitHub Light text
   }
   
   pre {
-    background-color: #ccd0da; // Catppuccin Latte Surface 0
-    border: 1px solid #acb0be; // Catppuccin Latte Surface 2
+    background-color: #f6f8fa; // GitHub Light code background
+    border: 1px solid #d1d9e0; // GitHub Light border
+  }
+}
+
+// Dark mode overrides
+:root[saved-theme="dark"] {
+  .page {
+    color: #f0f6fc; // GitHub Dark text
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #f0f6fc; // GitHub Dark heading text
+  }
+  
+  a {
+    color: #58a6ff; // GitHub Dark blue
+  }
+  
+  a:hover {
+    color: #79c0ff; // GitHub Dark blue hover
+  }
+  
+  code {
+    background-color: #161b22; // GitHub Dark code background
+    color: #f0f6fc; // GitHub Dark text
+  }
+  
+  pre {
+    background-color: #161b22; // GitHub Dark code background
+    border: 1px solid #30363d; // GitHub Dark border
   }
 }
 
