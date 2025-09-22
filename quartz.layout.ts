@@ -9,7 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.ConditionalRender({
       component: Component.RecentNotes({
         title: "recent posts",
-        limit: 3,
+        limit: 10,
         showTags: true,
         filter: (f) => f.slug !== "index", // Exclude the index page itself
       }),
@@ -52,7 +52,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Projects(),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({
+      localGraph: {
+        depth: 100,
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
