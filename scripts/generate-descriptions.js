@@ -1,0 +1,184 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+// Configuration
+const CONTENT_DIR = path.join(__dirname, '../content');
+const OLLAMA_MODEL = 'gemma3:latest';
+const MAX_CONTENT_LENGTH = 1000; // Limit content sent to Ollama
+
+/**
+ * Check if Ollama is running
+ */
+function checkOllamaRunning() {
+  try {
+    execSync('curl -s http://localhost:11434/api/version', { stdio: 'ignore' });
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+/**
+ * Generate description using Ollama
+ */
+async function generateDescription(content, title) {
+  const prompt = `Please write a concise 1-2 sentence description for this blog post titled "${title}". Focus on the main topic and key takeaways. Keep it under 100 words.
+
+Content preview:
+${content.substring(0, MAX_CONTENT_LENGTH)}${content.length > MAX_CONTENT_LENGTH ? '...' : ''}
+
+Description:`;
+
+  try {
+    const response = execSync(`curl -s http://localhost:11434/api/generate -d '{
+      "model": "${OLLAMA_MODEL}",
+      "prompt": ${JSON.stringify(prompt)},
+      "stream": false
+    }'`, { encoding: 'utf8' });
+    
+    const result = JSON.parse(response);
+    return result.response?.trim() || '';
+  } catch (error) {
+    console.error(`Error generating description for ${title}:`, error.message);
+    return '';
+  }
+}
+
+/**
+ * Parse frontmatter from markdown content
+ */
+function parseFrontmatter(content) {
+  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+  const match = content.match(frontmatterRegex);
+  
+  if (!match) {
+    return { frontmatter: {}, content };
+  }
+  
+  const [, frontmatterStr, bodyContent] = match;
+  const frontmatter = {};
+  
+  // Simple YAML parsing for basic key-value pairs
+  frontmatterStr.split('\n').forEach(line => {
+    const [key, ...valueParts] = line.split(':');
+    if (key && valueParts.length > 0) {
+      const value = valueParts.join(':').trim();
+      frontmatter[key.trim()] = value.replace(/^["']|["']$/g, '');
+    }
+  });
+  
+  return { frontmatter, content: bodyContent };
+}
+
+/**
+ * Update markdown file with description
+ */
+function updateMarkdownWithDescription(filePath, description) {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const { frontmatter, content: bodyContent } = parseFrontmatter(content);
+  
+  // Add or update description in frontmatter
+  frontmatter.description = description;
+  
+  // Reconstruct the file
+  const frontmatterStr = Object.entries(frontmatter)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join('\n');
+  
+  const newContent = `---\n${frontmatterStr}\n---\n${bodyContent}`;
+  fs.writeFileSync(filePath, newContent, 'utf8');
+}
+
+/**
+ * Get recently modified markdown files
+ */
+function getRecentMarkdownFiles() {
+  const files = [];
+  
+  function scanDirectory(dir) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      
+      if (entry.isDirectory()) {
+        scanDirectory(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'index.md') {
+        const stats = fs.statSync(fullPath);
+        files.push({
+          path: fullPath,
+          relativePath: path.relative(CONTENT_DIR, fullPath),
+          modified: stats.mtime
+        });
+      }
+    }
+  }
+  
+  scanDirectory(CONTENT_DIR);
+  
+  // Sort by modification time (newest first) and take top 3
+  return files
+    .sort((a, b) => b.modified - a.modified)
+    .slice(0, 3);
+}
+
+/**
+ * Main function
+ */
+async function main() {
+  console.log('🤖 Starting description generation...');
+  
+  // Check if Ollama is running
+  if (!checkOllamaRunning()) {
+    console.error('❌ Ollama is not running. Please start it with: ollama serve');
+    process.exit(1);
+  }
+  
+  console.log('✅ Ollama is running');
+  
+  // Get recent files
+  const recentFiles = getRecentMarkdownFiles();
+  console.log(`📝 Found ${recentFiles.length} recent markdown files`);
+  
+  for (const file of recentFiles) {
+    console.log(`\n📖 Processing: ${file.relativePath}`);
+    
+    try {
+      const content = fs.readFileSync(file.path, 'utf8');
+      const { frontmatter, content: bodyContent } = parseFrontmatter(content);
+      
+      // Skip if description already exists
+      if (frontmatter.description) {
+        console.log('   ⏭️  Description already exists, skipping');
+        continue;
+      }
+      
+      const title = frontmatter.title || path.basename(file.path, '.md');
+      console.log(`   🎯 Generating description for: ${title}`);
+      
+      const description = await generateDescription(bodyContent, title);
+      
+      if (description) {
+        updateMarkdownWithDescription(file.path, description);
+        console.log(`   ✅ Added description: ${description.substring(0, 80)}...`);
+      } else {
+        console.log('   ⚠️  Failed to generate description');
+      }
+      
+    } catch (error) {
+      console.error(`   ❌ Error processing ${file.relativePath}:`, error.message);
+    }
+  }
+  
+  console.log('\n🎉 Description generation completed!');
+}
+
+// Run the script
+if (require.main === module) {
+  main().catch(console.error);
+}
+
+module.exports = { main };
